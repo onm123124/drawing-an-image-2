@@ -14,7 +14,7 @@ void setup()
   appHeight = height;
   //
   //Image Dimensions for Aspect Ratio
-  //Obi-wan-star-wars-jedi-23864621-800-600.jpg
+  //Alberquerque.jpg
   //Note: Dimensions are found in the image file / Right Click / Properties / Details
   int picWidth = 800;
   int picHeight = 600;
@@ -43,7 +43,7 @@ void setup()
       if ( widthLarger == true ) imageHeightRatio = smallerDimension / largerDimension;
      picHeightAdjusted = picWidthAdjusted * imageHeightRatio;
       if (appHeight < picHeightAdjusted ) {
-        println("STOP: image is too big for CANVAS");
+        println("STOPPA: image is too big for CANVAS");
         exit(); //stops any further use of APP
         //Remember: goal is 1:1 aspect ratio
       }
