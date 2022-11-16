@@ -3,12 +3,14 @@ int appWidth, appHeight;
 Boolean widthLarger=false, heightLarger=false;
 Boolean width2Larger=false, height2Larger=false;
 float picWidthAdjusted=0.0, picHeightAdjusted=0.0;
+float picWidthAdjusted2=0.0, picHeightAdjusted2=0.0;
 float backgroundImageX, backgroundImageY, backgroundImageWidth, backgroundImageHeight, bottomHalfX, bottomHalfY, bottomHalfWidth, bottomHalfHeight, topHalfX, topHalfY, topHalfWidth, topHalfHeight;
 PImage pic, pic2, pic3;
+float imageHeightRatio2 = 2.0;
 Boolean nightMode=false;
 int tintDayMode=255, tintDayModeOpacity=50;
 int tintRed=64, tintGreen=64, tintBlue=40, tintNightModeOpacity=85;
-
+//
 //
 void setup()
 {
@@ -16,6 +18,26 @@ void setup()
   //Copy Display Algorithm from Hello World
   appWidth = width;
   appHeight = height;
+  //
+    //
+  //Population
+  pic = loadImage("../image used/Landscape/Alberquerque.jpg");
+  pic2 = loadImage("../image used/Landscape/Jesse.jpg");
+
+  backgroundImageX = appWidth*0;
+  backgroundImageY = appHeight*0;
+  backgroundImageWidth = appWidth-1;
+  backgroundImageHeight = appHeight-1;
+  //
+  topHalfX = appWidth*1/4;
+  topHalfY = appHeight*1/5;
+  topHalfWidth = appWidth*1/4 ;
+  topHalfHeight = appHeight*1/4;
+  bottomHalfX = appWidth*3/4;
+  bottomHalfY = appHeight*2/4;
+  bottomHalfWidth = appWidth*1/4;
+  bottomHalfHeight = appHeight*2.4;
+  //
   //
   //Image Dimensions for Aspect Ratio
   //Alberquerque.jpg
@@ -71,30 +93,24 @@ void setup()
     //Image smaller than CANVAS needs separate algorithm
   }
   //
+  //Image is either larger or smaller then rect (including CANVAS)
+  //Jesse image: landscape into landscape
+  if( width2Larger == true ){ //Landscape or Square is true
+  //picWidthAdjusted2= topHalfWidth;
+ //imageHeightRatio2 = smaller2Dimension / larger2Dimension;
+  //picHeightAdjusted2 = picWidthAdjusted2 * imageHeightRatio2;
+  
+} 
+else { //Portrait is TRUE 
+} 
+
+  //
   //Verifying Variable Values after algoroithm
   println("/App Width:", appWidth, " and App Height:", appHeight);
   println("Larger Image dimension is:", largerDimension);
   println("Image dimensions are:", picWidth, picHeight);
-  println("Adjusted Image dimesnions are (stretch is goal):", picWidthAdjusted, picHeightAdjusted);
-  //
-  //Population
-  pic = loadImage("../image used/Landscape/Alberquerque.jpg");
-  pic2 = loadImage("../image used/Landscape/Jesse.jpg");
-
-  backgroundImageX = appWidth*0;
-  backgroundImageY = appHeight*0;
-  backgroundImageWidth = appWidth-1;
-  backgroundImageHeight = appHeight-1;
-  //
-  topHalfX = appWidth*1/4;
-  topHalfY = appHeight*1/5;
-  topHalfWidth = appWidth*1/4 ;
-  topHalfHeight = appHeight*1/4;
-  bottomHalfX = appWidth*3/4;
-  bottomHalfY = appHeight*2/4;
-  bottomHalfWidth = appWidth*1/4;
-  bottomHalfHeight = appHeight*2.4;
-  //
+  println("Adjusted Image 1dimensions are (stretch is goal):", picWidthAdjusted, picHeightAdjusted);
+ println("Adjusted Image 2dimsenions are (stretch is goal):", picWidthAdjusted2, picHeightAdjusted2);
   //Rectangular Layout and Image Drawing to CANVAS
   rect( backgroundImageX, backgroundImageY, backgroundImageWidth, backgroundImageHeight );
   rect( topHalfX, topHalfY, topHalfWidth, topHalfHeight ); //Top Half
@@ -109,7 +125,7 @@ void setup()
 }//End setup
 //
 void draw (){
-image( pic2, topHalfX, topHalfY, topHalfWidth, topHalfHeight );
+image( pic2, topHalfX, topHalfY, picWidthAdjusted, picHeightAdjusted);
 image( pic3, bottomHalfX, bottomHalfY, bottomHalfWidth, bottomHalfHeight);
 }
 
