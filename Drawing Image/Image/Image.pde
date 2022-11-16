@@ -22,7 +22,7 @@ void setup()
   //Note: Dimensions are found in the image file / Right Click / Properties / Details
   int picWidth = 800;
   int picHeight = 600;
-  int pic2Width = 620;
+  int pic2Width = 590;
   int pic2Height = 420;
   int pic3Width = 759;
   int pic3Height = 422;
