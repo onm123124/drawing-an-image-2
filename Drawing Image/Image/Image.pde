@@ -20,9 +20,9 @@ void setup()
   appHeight = height;
   //
   //Population
-  pic = loadImage("../image used/Landscape/Alberquerque.jpg");
-  pic2 = loadImage("../image used/Landscape/Jesse.jpg");
-  //pic3 = loadImage("");
+  pic = loadImage("../Images Used/Landscape/Obi-wan-star-wars-jedi-23864621-800-600.jpg");
+  pic2 = loadImage("../Images Used/Landscape/bike.jpg");
+  pic3 = loadImage("../Images Used/Portrait/10-star-wars-darth-vader-portrait-wallpaper-1-325x485.jpg");
   backgroundImageX = appWidth*0;
   backgroundImageY = appHeight*0;
   backgroundImageWidth = appWidth-1;
@@ -139,3 +139,4 @@ void mousePressed() {
   }
 }//End mousePressed
 //
+//End Main Program
